@@ -1,4 +1,4 @@
-#### ng-controller
+### ng-controller
 
 **传统玩法**
 
