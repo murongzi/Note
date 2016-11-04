@@ -4,5 +4,5 @@
 
 
 
-[Function][./function.md]
+[Function]: ./function.md	"Function"
 
