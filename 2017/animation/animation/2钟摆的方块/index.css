@@ -1,0 +1,27 @@
+.diamond{
+    width:100px;
+    height:134px;
+    margin:20px auto;
+    background:red;
+    transform-origin:100% 0;
+    transform:rotate(0deg);//2D 旋转
+
+    -webkit-animation-delay: 100ms;
+    -webkit-animation-duration: 1500ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-name:'rotate';
+
+    -webkit-animation-direction: alternate;
+}
+
+.diamond img {
+    display:block;
+    width:100%;
+}
+
+@-webkit-keyframes rotate {
+    to {
+        transform:rotate(-63deg);//2D 旋转
+    }
+}
