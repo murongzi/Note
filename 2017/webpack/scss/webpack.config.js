@@ -4,21 +4,15 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     entry: path.join(__dirname, "/"),
     output: {
-        path: path.join(__dirname, "../dist/css"),
+        path: path.join(__dirname, "../dist/scss"),
         filename: "bundle.js"
     },
     module: {
         loaders: [
             {
-                test: /\.css$/,
-                loader: ExtractTextPlugin.extract('css', {
-                    publicPath: '../'
-                })
-            },
-            {
                 test: /\.(sass|scss)/,
                 loader: ExtractTextPlugin.extract(["css", 'sass'], {
-                    publicPath: path.join(__dirname, "../dist/css")
+                    publicPath: path.join(__dirname, "../dist/scss")
                 })
             },
             {
