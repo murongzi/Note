@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "css":"rimraf dist/scss &&  webpack --config ./css/webpack.config.js -p"
+    "scss":"rimraf dist/scss &&  webpack --config ./scss/webpack.config.js -p",
+    "css":"rimraf dist/css &&  webpack --config ./css/node.js"
   },
   "devDependencies": {
     "webpack": "^1.13.1",
