@@ -3,7 +3,7 @@
 全局安转js-beautify脚本
 
 ```bash
-npm install -g 
+npm install -g js-beautify
 ```
 
 实行shell命令,进入指定的目录
