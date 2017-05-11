@@ -13,3 +13,6 @@ find . -name '*.js' -exec js-beautify -r -s 2 -p -f '{}' \;
 ```
 
 耐心等待...
+
+[js-beautify参考链接](https://github.com/beautify-web/js-beautify#options)
+
