@@ -31,3 +31,17 @@ https://www.test.pajkdc.com/casper/#/search?bizLineCode=1&srvIds=1820&spuId=2003
    </a>
    
    "type -- String || Array; publish on subscribe invoke GetMsg""eventName -- String || Array;""showDebugInfo() showDebugInfo("publish") showDebugInfo(["publish", "invoke"], "onAppRoute")""open tools logs"1"closeDebug"2"showDebugInfoTable"3"openToolsLog""""""openVendor() ""open log folder"4"openVendor""""""openVendor() ""open vendor folder"5"showRequestInfo""""""showRequestInfo() ""show request info"6"showSystemInfo""""""showSystemInfo() ""show tools info"Array[7]0: Objectarg[0]: "type -- String || Array; publish on subscribe invoke GetMsg"arg[1]: "eventName -- String || Array;"example: "showDebugInfo() showDebugInfo("publish") showDebugInfo(["publish", "invoke"], "onAppRoute")"fun: "showDebugInfo"openToolsLog: "open tools logs"__proto__: Object1: Object2: Object3: Object4: Object5: Object6: Objectlength: 7__proto__: Array[0]
+   
+   
+   
+   
+   
+   
+   
+   https://www.jk.cn/casper/#/search?bizLineCode=1&amp;srvIds=1579&amp;spuId=240331&amp;cityCode=110100&amp;cityName=%E5%8C%97%E4%BA%AC
+   
+   
+   
+   
+   
+   
