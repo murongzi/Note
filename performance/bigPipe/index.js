@@ -8,17 +8,12 @@ http.createServer(function(req, res) {
      * **/
     //res.writeHead(200, {'Content-Type':'text/html', "Content-length":9})
 
-    res.writeHead(200, {'Content-Type':'text/html'})
-    res.write("<div>hello world!!!</div><img src='http://www.baidu.com/img/bd_logo1.png' />");
+    res.writeHead(200, {'Content-Type':'text/html', "Keep-Alive":"timeout=5"})
+    res.write('<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><div>hello world!!!</div><img src="http://www.baidu.com/img/bd_logo1.png" />');
 
-    setTimeout(function() {
-        res.write("<div>hello world222!!!</div>");
-
-        setTimeout(function() {
-            res.write("<div>hello world333!!!</div>");
-            res.end();
-        }, 5000);
-    }, 5000);
+    setInterval(function() {
+        res.write("<div>hello worl!!!" + Math.random() + "</div>");
+    }, 1500);
 
 
 }).listen(8888, function(){
