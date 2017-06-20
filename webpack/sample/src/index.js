@@ -1,6 +1,8 @@
 
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
+import {Provider} from 'react-redux';
+import {Router, Route, IndexRoute, hashHistory, Link, Redirect} from 'react-router';
 import Hello from './main';
 
 var Test = class extends React.Component {
@@ -11,18 +13,52 @@ var Test = class extends React.Component {
     render() {
         return (
             <div>Test
-
-                <Hello/>
+                <a href="/">去首页</a>xxxx
+                <a href="users">去用户页</a>
+                哈哈哈哈哈哈哈哈哈 about页面
             </div>
         );
     }
 };
 
-ReactDOM.render(
-    <Hello />,
-    document.querySelector('#rootApp')
-);
 
+var App = class extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+    
+
+
+    render() {
+        return (
+            <div>
+                main page
+                <a href="#/about">Click about</a>xxxx
+                <a href="#/users">Click users</a>
+            </div>
+        );
+    }
+};
+
+render((
+    <Router>
+        <Route path="/" component={App}>
+            <Route path="/about" component={Test}/>
+            <Route path="/users" component={Hello}/>
+        </Route>
+    </Router>
+), document.querySelector('#rootApp'));
+
+/*render((
+    <Router>
+        <Route history={hashHistory}>
+            <Route path="/" component={App}>
+                <Route path="about" component={Test}/>
+                <Route path="users" component={Hello}/>
+            </Route>
+        </Route>
+    </Router>
+), document.querySelector('#rootApp'));*/
 
 
 

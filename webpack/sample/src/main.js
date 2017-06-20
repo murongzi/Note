@@ -24,7 +24,9 @@ export default class extends React.Component {
     render() {
         return (
             <div>
-                this is a test,hahaha
+                测试测试测试测试测试测试测试测试测试测试测试测试
+                <a href="/">去首页</a>xxxx
+                <a href="about">去about页</a>
             </div>
         );
     }
