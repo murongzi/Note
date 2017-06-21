@@ -1,32 +1,45 @@
 import http from 'http';
-import react from 'react';
+import Express from 'express'
+import React from 'react';
 import { renderToString } from 'react-dom/server'
+import App from "./views/app";
+import Detail from "./views/detail";
+import List from "./views/list";
 
-const app = Express()
-const port = 3000
+const app = Express();
+const port = 3000;
 
 //Serve static files
-app.use('/static', Express.static('static'))
+//app.use('/static', Express.static('static'));
 
 // This is fired every time the server side receives a request
-app.use(handleRender)
+//app.use(handleRender);
 
-function handleRender(req, res) {
-  // Create a new Redux store instance
-  const store = createStore(counterApp)
+function handleRender(req, res, component) {
+  res.send(renderFullPage(renderToString(component)));
+}
 
-  // Render the component to a string
-  const html = renderToString(
-    <Provider store={store}>
-      <App />
-    </Provider>
-  )
+app.get('/', function(req, res) {
+  handleRender(req, res, <App />)
+});
+app.get('/detail', function(req, res) {
+  handleRender(req, res, <Detail />)
+});
+app.get('/list', function(req, res) {
+  handleRender(req, res, <List />)
+});
 
-  // Send the rendered page back to the client
-  res.send(renderFullPage(html, preloadedState))
+function renderFullPage(html) {
+  return `<html>
+            <head>
+              <meta charset="utf-8"/>
+              <title>这是在测试服务端node的渲染</title>
+            </head>
+            <body>${html}</body>
+          </html>`;
 }
 
 
 app.listen(port)
 
-console.log('Server running at http://127.0.0.1:1337/');
+console.log(`Server running at http://127.0.0.1:${port}/`);
