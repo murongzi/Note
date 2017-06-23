@@ -28,7 +28,7 @@ render(
             <Router history={browserHistory}>
                 <Route path='/' component={App}>
                     <IndexRoute component={Home} />
-                    <Route path="/detail" component={Detail}/>
+                    <Route path="/detail/:id" component={Detail}/>
                 </Route>
             </Router>
         </Provider>

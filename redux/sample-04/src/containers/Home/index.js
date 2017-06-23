@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import HomeAction from '../../actions/home.action';
+import { Link } from 'react-router'
 
 export default connect((state, ownProps) => ({
     reducers:state.Home
@@ -18,7 +19,7 @@ export default connect((state, ownProps) => ({
                 <p>这个是Home页</p>
                 <span>{this.props.reducers.count}</span>
                 <button onClick={() => this.add()}>Click Me to add the num</button>
-                <a href="/detail">去detail页面</a>
+                <Link to="/detail/2">去detail页面</Link>
             </div>
         );
     }
