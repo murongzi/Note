@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf ./dist && webpack -w",
+    "build": "rm -rf ./dist && webpack && cp -rf ./dist/ ~/work/demo/FE/dist/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

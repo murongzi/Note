@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import HomeAction from '../../actions/home.action';
+import DetailAction from '../../actions/detail.action';
 
 export default connect((state, ownProps) => ({
-    reducers:state.Home
+    reducers:state.Detail
 }), dispatch => ({
-    action:bindActionCreators(HomeAction, dispatch)
+    action:bindActionCreators(DetailAction, dispatch)
 }))(class extends Component {
     constructor(props) {
         super(props);
@@ -15,10 +15,9 @@ export default connect((state, ownProps) => ({
     render() {
         return (
             <div>
-                <p>这个是Home页</p>
+                <p>这个是Detail页</p>
                 <span>{this.props.reducers.count}</span>
                 <button onClick={() => this.add()}>Click Me to add the num</button>
-                <a href="/detail">去detail页面</a>
             </div>
         );
     }
