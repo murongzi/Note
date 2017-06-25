@@ -6,6 +6,11 @@ export default class extends Component{
         super(props);
     }
 
+    componentWillMount() {
+        console.dir(this.props.store);
+        debugger;
+    }
+
     render() {
         return (
             <div>test

@@ -21,6 +21,8 @@ export default {
                         type:constant.HOME,
                         data:res.home
                     });
+
+                    params && params.callback && params.callback(res.home);
                 }
             });
         }

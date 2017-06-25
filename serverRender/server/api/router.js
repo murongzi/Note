@@ -15,6 +15,8 @@ import fs from 'fs';
 import path from 'path';
 import Api from "../../src/libs/api";
 
+import HomeAction from "../../src/actions/home.action";
+
 const serverRender = Router();
 
 function getReduxPromise(props, store) {
@@ -30,26 +32,35 @@ serverRender.route('*').get((req, res) => {
     const routes = createRouter(history);
 
     match({ routes, location: req.originalUrl }, (error, redirectLocation, renderProps) => {
-        console.log(renderProps);
 
+        debugger;
+        renderProps.components[renderProps.components.length - 1].loadData();
 
-        const reduxState = JSON.stringify(store.getState()).replace(/</g, '\\x3c');
-        const html = ReactDOMServer.renderToString(
-            <Provider store={store}>
-                {<RouterContext {...renderProps} />}
-            </Provider>
-        );
+        store.dispatch(HomeAction.queryData({
+            callback:function(result) {
+                const reduxState = JSON.stringify(store.getState()).replace(/</g, '\\x3c');
+                const html = ReactDOMServer.renderToString(
+                    <Provider store={store}>
+                        {<RouterContext {...renderProps} />}
+                    </Provider>
+                );
 
-        console.log('===============================', html);
+                console.log('===================================', result);
 
-        Api.request({
+                let state = JSON.stringify({HomeReducers:{"homeList":result}}).replace(/</g, '\\x3c');
+
+                res.render("index.ejs", {html, state});
+            }
+        }));
+
+        /*Api.request({
             "url":"http://www.mazidong.com/FE/data/homelist.json",
             "callback":(result) => {
                 let state = JSON.stringify({HomeReducers:{"homeList":result.home}}).replace(/</g, '\\x3c');
 
                 res.render("index.ejs", {html, state});
             }
-        });
+        });*/
 
         //res.render("index", {html});
 

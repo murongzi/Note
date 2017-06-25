@@ -12,6 +12,9 @@ export default connect((state, owmProps) => ({
 }), dispatch => ({
     action:bindActionCreators(actions, dispatch)
 }))(class extends Component{
+    static loadData(option) {
+        debugger;
+    }
     constructor(props) {
         super(props);
     }
