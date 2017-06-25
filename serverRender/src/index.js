@@ -6,4 +6,4 @@ import App from './containers/App';
 
 import store from './store/index.store';
 
-render(<App history={browserHistory} store={store()} />, document.getElementById('appRoot'));
+render(<App history={browserHistory} store={store(window.__initState__)} />, document.getElementById('appRoot'));
