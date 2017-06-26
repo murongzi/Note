@@ -21,7 +21,7 @@ module.exports = {
     },
     output: {
         path: path.join(__dirname, '/dist'),
-        filename: '[name].js',
+        filename: '/[name].js',
         publicPath: ''
     },
     module: {
@@ -35,9 +35,22 @@ module.exports = {
         }]
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
+        /*new webpack.HotModuleReplacementPlugin(),*/
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.UglifyJsPlugin(),
+        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.optimize.AggressiveMergingPlugin(),
         new HtmlWebpackPlugin({
+            filename:"index.ejs",
             template: path.join(__dirname, '/src/index.ejs'),
+            minify: {
+                minifyJS: true,
+                collapseWhitespace: true,
+                removeComments: true,
+                removeScriptTypeAttributes: true
+            },
+            placeHolderHTML:"<%-html%>",
+            stateStore:"<%-state%>"
         })
     ]
 };

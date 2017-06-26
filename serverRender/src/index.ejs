@@ -7,6 +7,9 @@
     <title>这是一个测试页面</title>
 </head>
 <body>
-    <div id="appRoot">{html}</div>
+    <div id="appRoot"><%= htmlWebpackPlugin.options.placeHolderHTML %></div>
+    <script>
+        window.__initState__ = <%= htmlWebpackPlugin.options.stateStore %>
+    </script>
 </body>
 </html>

@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf ./dist && webpack --env=dist && cp -rf ./dist/ ~/work/demo/FE/dist/",
     "start": "webpack-dev-server",
-    "server": "npm run build && webpack --progress --colors --config webpack.node.config.js && node ./server/dist/server.js"
+    "server": "npm run build && webpack --progress --colors --config webpack.node.config.js && node ./server/dist/server.js",
+    "bs":"npm run build && webpack --progress --colors --config webpack.node.config.js"
   },
   "keywords": [],
   "author": "",
@@ -55,11 +56,11 @@
   "dependencies": {
     "classnames": "2.2.5",
     "ejs": "^2.5.6",
-    "es6-promise": "4.0.5",
+    "es6-promise": "^4.0.5",
     "history": "^4.6.3",
     "iscroll": "5.2.0",
-    "isomorphic-fetch": "2.2.1",
-    "md5": "2.2.1",
+    "isomorphic-fetch": "^2.2.1",
+    "md5": "^2.2.1",
     "normalize.css": "5.0.0",
     "pubsub-js": "1.5.4",
     "react": "15.2.1",
@@ -72,6 +73,7 @@
     "react-swipeable": "3.5.0",
     "redux": "3.5.2",
     "redux-thunk": "2.1.0",
+    "redux-actions": "1.2.1",
     "swiper": "3.4.0"
   }
 }

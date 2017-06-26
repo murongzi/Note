@@ -6,6 +6,9 @@ import DetailReducers from './detail.reducer';
 
 const Reducers = _Assign({
   routing: routerReducer
-}, HomeReducers, DetailReducers);
+}, {
+  HomeReducers:combineReducers(HomeReducers),
+  DetailReducers:combineReducers(DetailReducers)
+});
 
 export default combineReducers(Reducers);
