@@ -33,6 +33,8 @@ serverRender.route('*').get((req, res) => {
     const store = configureStore();
     const routes = createRouter(history);
 
+    console.log(req.originalUrl);
+
     match({ routes, location: req.originalUrl }, (error, redirectLocation, renderProps) => {
 
         debugger;

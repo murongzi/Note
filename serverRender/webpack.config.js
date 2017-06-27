@@ -24,6 +24,7 @@ module.exports = {
         filename: '/[name].js',
         publicPath: ''
     },
+    devtool: 'cheap-module-source-map',
     module: {
         loaders: [{
             test: /\.js$/,
@@ -35,6 +36,9 @@ module.exports = {
         }]
     },
     plugins: [
+        new webpack.DefinePlugin({
+        'process.env.NODE_ENV': '"production"'
+        }),
         /*new webpack.HotModuleReplacementPlugin(),*/
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.UglifyJsPlugin(),
