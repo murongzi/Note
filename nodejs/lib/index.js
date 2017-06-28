@@ -50,7 +50,7 @@ function renderFullPage(html, preloadedState) {
   return `<html>
             <head>
               <meta charset="utf-8"/>
-              <title>这是在测试服务端node的渲染</title>
+              <title>就是这样</title>
             </head>
             <body>
 
