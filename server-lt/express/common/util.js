@@ -4,7 +4,7 @@ var config = {
   host     : 'localhost',
   user     : 'root',
   password : 'Mzd-890810',
-  database : 'mzd',
+  database : 'myTest',
   charset  : "utf8"
 }
 
@@ -31,7 +31,10 @@ module.exports = {
 
         return new Promise(function(resolve, reject) {
             connection.query('insert into user set ?', data, function (error, results, fields) {
-                if (error) throw error;
+                if (error) {
+                    reject();
+                    return;
+                }
                 
                 resolve(results);
             });

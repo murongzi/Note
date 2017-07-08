@@ -1,8 +1,12 @@
 (function(exports) {
     exports.$('#btnClick').onclick = function() {
-        exports.request({url:'/api/detail'}).then(function(data) {
+        exports.request({url:'/api/list'}).then(function(data) {
             var arry = [], item,
                 table = exports.$('#table');
+
+            if (!data || data.code != 0) return;
+
+            data = data.result;
 
             for (var i = 0, l = data.length; i < l; i++) {
                 item = data[i];
