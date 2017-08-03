@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "removeComments": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "target": "es2016",
+    "jsx": "react",
+    "baseUrl": "./src/",
+    "paths": {
+      "im": [
+        "im"
+      ]
+    }
+  },
+  "typeRoots": [
+    "./node_modules/@types"
+  ],
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
