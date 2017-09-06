@@ -1,0 +1,14 @@
+{
+  "name": "Parent-Demo",
+  "version": "1.0.0",
+  "description": "这是个页面",
+  "main": "index.js",
+  "scripts": {
+    "build":"",
+    "start":"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,11 @@
+*.log
+
+node_modules
+
+#dist folder
+dist
+
+.DS_Store
+*.iml
+.idea/
+.npmrc
