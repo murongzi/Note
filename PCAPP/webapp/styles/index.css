@@ -1,0 +1,9 @@
+* {
+    padding:0;
+    margin:0;
+}
+.main-contain h1{
+    background:pink;
+    text-align: center;
+    line-height: 44px;
+}

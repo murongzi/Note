@@ -4,4 +4,4 @@ node_modules
 *.iml
 .npmrc
 dist
-.vscode
+release-builds
