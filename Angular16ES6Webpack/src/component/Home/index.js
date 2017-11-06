@@ -1,15 +1,15 @@
-import HomeTemplate from './home.component.html'
-import {controller} from './home.component.controller'
+import Angular from 'angular'
 
-/* export default {
-    template:HomeTemplate,
-    controller() {
-        this.application = +new Date
-    }
-} */
+import template from './home.component.html'
+import controller from './home.component.controller'
 
-debugger
-export default App => App.component('helloTom', {
-    template:HomeTemplate,
+export default {
+    template,
+    controller,
+    controllerAs:'vm'
+}
+
+/* export default (App) => App.component('hello', {
+    template,
     controller
-}).name
+}).name */

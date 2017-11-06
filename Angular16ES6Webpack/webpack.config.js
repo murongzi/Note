@@ -50,7 +50,7 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.AggressiveMergingPlugin(),
-        /* new webpack.optimize.UglifyJsPlugin(), */
+        new webpack.optimize.UglifyJsPlugin(),
         //new ExtractTextPlugin('styles/app.[hash:16].css'),
         new ExtractTextPlugin('styles/app.css'),
         new webpack.optimize.CommonsChunkPlugin(
