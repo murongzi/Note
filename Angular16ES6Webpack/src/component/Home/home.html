@@ -1,0 +1,11 @@
+<div>
+    这个是Home组件
+    {{vm.message}}
+    <div>{{random}}</div>
+    <div><button ng-click="vm.queryData(e)">这是按钮</button></div>
+    <ul ng-if="vm.people && vm.people.length">
+        <li ng-repeat="(key, value) in vm.people">
+            <div><span>姓名</span>{{value.name}},<span>年龄</span>{{value.age}}</div>
+        </li>
+    </ul>
+</div>

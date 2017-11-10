@@ -1,15 +1,12 @@
-import Angular from 'angular'
+import App from '../../App'
 
-import template from './home.component.html'
-import controller from './home.component.controller'
+import template from './home.html'
+import controller from './home.controller'
 
-export default {
+App.component('helloTom', {
     template,
     controller,
     controllerAs:'vm'
-}
+})
 
-/* export default (App) => App.component('hello', {
-    template,
-    controller
-}).name */
+export default "helloTom"
