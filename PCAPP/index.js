@@ -17,8 +17,11 @@ app.on('ready', () => {
     })
 
     mainWindow.loadURL(url.format({
-        pathname:path.join(__dirname, './webapp/index.html'),
-        protocol:'file',
+        pathname:`/`,
+        hostname:'localhost',
+        protocol:'http',
+        port:'8082',
+        hash:'!/hello',
         slashes:true
     }))
 
