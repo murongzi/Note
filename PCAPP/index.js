@@ -16,6 +16,7 @@ app.on('ready', () => {
         /* titleBarStyle: 'hidden' */
     })
 
+    /* 这里的url带有hash，必须用这个方法处理，否则会出现#被转义的情况，导致页面静态资源加载失败 */
     mainWindow.loadURL(url.format({
         pathname:`/`,
         hostname:'localhost',
