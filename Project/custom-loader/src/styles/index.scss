@@ -1,0 +1,9 @@
+body {
+    color:red;
+
+    p {
+        font-size: 16px;
+        @include ellipsis();
+        border: $paui-btn-border-default;
+    }
+}

@@ -1,0 +1,12 @@
+@font-face
+{
+
+  font-family: 'aa';
+  src: url('../fonts/paui-icons.eot');
+}
+
+body {
+    color: red;
+    background:url('../images/icon_kefu.png') no-repeat;
+    font-size: 16px;
+}

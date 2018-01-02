@@ -1,13 +1,23 @@
-import {Component} from '@angular/core';
+import {
+    Component,
+    OnInit
+} from '@angular/core';
 
-import  ApiSercive  from '../../../lib/api.service';
+import { AdItem, AdService } from '../../component';
 
 @Component({
-    selector:'app-footer',
-    templateUrl:'./index.component.html'
+    selector: 'app-footer',
+    templateUrl: './index.component.html'
 })
-export class FooterComponent{
-    constructor(){
-        ApiSercive('foot')
+export class FooterComponent implements OnInit {
+    public ads: AdItem[];
+
+    constructor(
+        private adService:AdService
+    ) { }
+
+    ngOnInit() {
+        this.ads = this.adService.getAds()
     }
+
 }

@@ -2,8 +2,16 @@
     <form>
         <label>name:</label><input type="text" placeholder="请输入"/>
 
+        <ul>
+           <li *ngFor="let item of items">{{item}}</li> 
+        </ul>
     </form>
-    <button counting name="this is a test">btnClick me Container </button>
+    <button counting name="this is a test" (onChange)="onDirectiveEvent()">添加template内容至可视区 </button>
+    <button (click)="onRemoveClick()">从可视区删除template</button>
 
     <app-panel></app-panel>
 </div>
+
+<ng-template #defaultTemplate>
+    <div>xxxx to show</div>
+</ng-template>

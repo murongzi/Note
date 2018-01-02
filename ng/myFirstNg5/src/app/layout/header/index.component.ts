@@ -17,6 +17,18 @@ export class HeaderComponent{
     ) {}
 
     onClick() {
-        this.headerService.getUserInfo();
+        this.headerService.getUserInfo().subscribe((data) => {
+            data
+        });
+    }
+
+    onClickGetUserInfo() {
+        this.headerService.getUser().subscribe((data) => {
+            debugger
+            data
+        }, err => {
+            err
+            debugger
+        });
     }
 }
